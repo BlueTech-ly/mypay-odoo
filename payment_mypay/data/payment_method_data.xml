@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="payment_method_mypay" model="payment.method">
+        <field name="name">MyPay</field>
+        <field name="code">mypay</field>
+        <field name="sequence">1000</field>
+        <field name="active">False</field>
+        <field name="image" type="base64" file="payment_mypay/static/src/img/mypay.png"/>
+        <field name="support_tokenization">False</field>
+        <field name="support_express_checkout">False</field>
+        <field name="support_refund">none</field>
+        <field name="supported_currency_ids" eval="[(4, ref('base.LYD'))]"/>
+    </record>
+
+    <record id="payment_method_moamalat" model="payment.method">
+        <field name="name">Banking card</field>
+        <field name="code">moamalat</field>
+        <field name="sequence">1010</field>
+        <field name="active">False</field>
+        <field name="image" type="base64" file="payment_mypay/static/src/img/moamalat.png"/>
+        <field name="support_tokenization">False</field>
+        <field name="support_express_checkout">False</field>
+        <field name="support_refund">none</field>
+        <field name="supported_currency_ids" eval="[(4, ref('base.LYD'))]"/>
+    </record>
+
+    <record id="payment_method_masrafi_pay" model="payment.method">
+        <field name="name">Masrafi Pay</field>
+        <field name="code">masrafi-pay</field>
+        <field name="sequence">1020</field>
+        <field name="active">False</field>
+        <field name="image" type="base64" file="payment_mypay/static/src/img/masrafi_pay.png"/>
+        <field name="support_tokenization">False</field>
+        <field name="support_express_checkout">False</field>
+        <field name="support_refund">none</field>
+        <field name="supported_currency_ids" eval="[(4, ref('base.LYD'))]"/>
+    </record>
+
+    <record id="payment_method_yasr_pay" model="payment.method">
+        <field name="name">Yasr Pay</field>
+        <field name="code">yasr-pay</field>
+        <field name="sequence">1030</field>
+        <field name="active">False</field>
+        <field name="image" type="base64" file="payment_mypay/static/src/img/yasr_pay.png"/>
+        <field name="support_tokenization">False</field>
+        <field name="support_express_checkout">False</field>
+        <field name="support_refund">none</field>
+        <field name="supported_currency_ids" eval="[(4, ref('base.LYD'))]"/>
+    </record>
+
+    <record id="payment_method_sahary_pay" model="payment.method">
+        <field name="name">Sahary Pay</field>
+        <field name="code">sahary-pay</field>
+        <field name="sequence">1040</field>
+        <field name="active">False</field>
+        <field name="image" type="base64" file="payment_mypay/static/src/img/sahary_pay.png"/>
+        <field name="support_tokenization">False</field>
+        <field name="support_express_checkout">False</field>
+        <field name="support_refund">none</field>
+        <field name="supported_currency_ids" eval="[(4, ref('base.LYD'))]"/>
+    </record>
+
+    <record id="payment_method_edfali" model="payment.method">
+        <field name="name">Edfali</field>
+        <field name="code">edfali</field>
+        <field name="sequence">1050</field>
+        <field name="active">False</field>
+        <field name="image" type="base64" file="payment_mypay/static/src/img/edfali.png"/>
+        <field name="support_tokenization">False</field>
+        <field name="support_express_checkout">False</field>
+        <field name="support_refund">none</field>
+        <field name="supported_currency_ids" eval="[(4, ref('base.LYD'))]"/>
+    </record>
+
+    <record id="payment_method_sadad" model="payment.method">
+        <field name="name">SADAD</field>
+        <field name="code">sadad</field>
+        <field name="sequence">1060</field>
+        <field name="active">False</field>
+        <field name="image" type="base64" file="payment_mypay/static/src/img/sadad.png"/>
+        <field name="support_tokenization">False</field>
+        <field name="support_express_checkout">False</field>
+        <field name="support_refund">none</field>
+        <field name="supported_currency_ids" eval="[(4, ref('base.LYD'))]"/>
+    </record>
+
+    <record id="payment_method_mobicash" model="payment.method">
+        <field name="name">Mobicash</field>
+        <field name="code">mobicash</field>
+        <field name="sequence">1070</field>
+        <field name="active">False</field>
+        <field name="image" type="base64" file="payment_mypay/static/src/img/mobicash.png"/>
+        <field name="support_tokenization">False</field>
+        <field name="support_express_checkout">False</field>
+        <field name="support_refund">none</field>
+        <field name="supported_currency_ids" eval="[(4, ref('base.LYD'))]"/>
+    </record>
+
+    <record id="payment_method_prepaid_card" model="payment.method">
+        <field name="name">Prepaid card</field>
+        <field name="code">prepaid-card</field>
+        <field name="sequence">1080</field>
+        <field name="active">False</field>
+        <field name="image" type="base64" file="payment_mypay/static/src/img/moamalat.png"/>
+        <field name="support_tokenization">False</field>
+        <field name="support_express_checkout">False</field>
+        <field name="support_refund">none</field>
+        <field name="supported_currency_ids" eval="[(4, ref('base.LYD'))]"/>
+    </record>
+
+</odoo>

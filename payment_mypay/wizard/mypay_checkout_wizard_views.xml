@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="mypay_checkout_wizard_view_form" model="ir.ui.view">
+        <field name="name">mypay.checkout.wizard.form</field>
+        <field name="model">mypay.checkout.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Pay via MyPay">
+                <group>
+                    <group>
+                        <field name="move_id"/>
+                        <field name="partner_id"/>
+                        <field name="available_payment_method_ids" invisible="1"/>
+                        <field name="payment_method_id" options="{'no_create': True, 'no_open': True}"/>
+                    </group>
+                    <group>
+                        <field name="amount"/>
+                        <field name="currency_id" invisible="1"/>
+                        <field name="phone" placeholder="0912345678"/>
+                    </group>
+                </group>
+                <div class="text-muted" colspan="2">
+                    Selecting a gateway sends its MyPay alias (e.g. sahary-pay) with a Libyan
+                    phone so checkout skips the all-gateways page.
+                </div>
+                <footer>
+                    <button name="action_open_mypay" type="object" string="Open MyPay" class="btn-primary"/>
+                    <button string="Cancel" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_mypay_checkout_wizard" model="ir.actions.act_window">
+        <field name="name">Pay via MyPay</field>
+        <field name="res_model">mypay.checkout.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

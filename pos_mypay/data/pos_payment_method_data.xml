@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="pos_payment_method_mypay" model="pos.payment.method">
+        <field name="name">MyPay</field>
+        <field name="is_online_payment" eval="True"/>
+        <field name="split_transactions" eval="False"/>
+        <field name="image" type="base64" file="payment_mypay/static/src/img/mypay.png"/>
+        <field name="online_payment_provider_ids"
+               eval="[(4, ref('payment_mypay.payment_provider_mypay'))]"/>
+    </record>
+
+</odoo>

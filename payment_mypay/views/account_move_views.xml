@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_move_form_mypay" model="ir.ui.view">
+        <field name="name">account.move.form.mypay</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header/button[@name='action_register_payment'][@id='account_invoice_payment_btn']" position="after">
+                <field name="mypay_can_pay" invisible="1"/>
+                <button name="action_mypay_open_checkout"
+                        type="object"
+                        string="Pay via MyPay"
+                        class="btn-secondary"
+                        invisible="not mypay_can_pay"
+                        groups="account.group_account_invoice"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

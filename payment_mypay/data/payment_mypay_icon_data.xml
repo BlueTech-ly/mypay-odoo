@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Reload logos on every module upgrade (not noupdate). -->
+<odoo>
+    <record id="payment_provider_mypay" model="payment.provider">
+        <field name="image_128" type="base64" file="payment_mypay/static/description/icon.png"/>
+    </record>
+    <record id="payment_method_mypay" model="payment.method">
+        <field name="image" type="base64" file="payment_mypay/static/src/img/mypay.png"/>
+    </record>
+    <record id="payment_method_moamalat" model="payment.method">
+        <field name="image" type="base64" file="payment_mypay/static/src/img/moamalat.png"/>
+    </record>
+    <record id="payment_method_masrafi_pay" model="payment.method">
+        <field name="image" type="base64" file="payment_mypay/static/src/img/masrafi_pay.png"/>
+    </record>
+    <record id="payment_method_yasr_pay" model="payment.method">
+        <field name="image" type="base64" file="payment_mypay/static/src/img/yasr_pay.png"/>
+    </record>
+    <record id="payment_method_sahary_pay" model="payment.method">
+        <field name="image" type="base64" file="payment_mypay/static/src/img/sahary_pay.png"/>
+    </record>
+    <record id="payment_method_edfali" model="payment.method">
+        <field name="image" type="base64" file="payment_mypay/static/src/img/edfali.png"/>
+    </record>
+    <record id="payment_method_sadad" model="payment.method">
+        <field name="image" type="base64" file="payment_mypay/static/src/img/sadad.png"/>
+    </record>
+    <record id="payment_method_mobicash" model="payment.method">
+        <field name="image" type="base64" file="payment_mypay/static/src/img/mobicash.png"/>
+    </record>
+    <record id="payment_method_prepaid_card" model="payment.method">
+        <field name="image" type="base64" file="payment_mypay/static/src/img/moamalat.png"/>
+    </record>
+</odoo>

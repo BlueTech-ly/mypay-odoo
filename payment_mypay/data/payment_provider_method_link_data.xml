@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Link and activate gateway methods on every upgrade (not noupdate). -->
+<odoo>
+    <function model="payment.provider" name="_mypay_sync_gateway_payment_methods"/>
+</odoo>

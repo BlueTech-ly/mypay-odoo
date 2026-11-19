@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>MyPay</title>
+    <style>
+        body { font-family: Helvetica, Arial, sans-serif; color: #1f2937; line-height: 1.5; margin: 0; padding: 24px; }
+        h1 { font-size: 1.75rem; margin: 0 0 8px; }
+        h2 { font-size: 1.15rem; margin: 24px 0 8px; }
+        p, li { font-size: 0.95rem; }
+        .muted { color: #6b7280; }
+        ul { padding-left: 1.2rem; }
+        code { background: #f3f4f6; padding: 1px 6px; border-radius: 4px; }
+        .box { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px; margin-top: 16px; }
+    </style>
+</head>
+<body>
+    <h1>MyPay</h1>
+    <p class="muted">Accept Libyan payments in Odoo 18 through MyPay hosted checkout.</p>
+
+    <h2>Features</h2>
+    <ul>
+        <li>Hosted redirect checkout (LYD)</li>
+        <li>Gateway aliases: Moamalat, Masrafi Pay, Yasr Pay, Sahary Pay, Edfali, SADAD, Mobicash</li>
+        <li>Staff pay-on-behalf from customer invoices</li>
+        <li>Payment Status enquiry + optional signed webhooks + cron recovery</li>
+    </ul>
+
+    <h2>الميزات</h2>
+    <ul>
+        <li>دفع مستضاف عبر MyPay (دينار ليبي)</li>
+        <li>بوابات محلية عبر gateway aliases</li>
+        <li>دفع الموظف نيابة عن العميل من الفاتورة</li>
+        <li>تأكيد عبر Payment Status وWebhook اختياري ومهمة مجدولة</li>
+    </ul>
+
+    <div class="box">
+        <p><strong>Setup:</strong> Install <code>MyPay</code>, open Payment Providers → MyPay, enter Client ID / Secret ID, set Test or Enabled.</p>
+        <p><strong>Docs:</strong> <a href="https://mypay.ly">https://mypay.ly</a></p>
+    </div>
+</body>
+</html>

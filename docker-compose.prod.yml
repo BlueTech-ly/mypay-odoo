@@ -1,0 +1,63 @@
+# Production-style stack: Caddy terminates TLS and proxies to Odoo.
+# Usage:
+#   cp .env.example .env   # set DOMAIN and ACME_EMAIL
+#   docker compose -f docker-compose.prod.yml up -d
+#
+# Then in Odoo:
+#   web.base.url = https://$DOMAIN
+#   proxy_mode = True
+# Paste the MyPay Webhook URL from the provider form into the MyPay dashboard.
+
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: odoo
+    volumes:
+      - odoo-db:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  odoo:
+    image: odoo:18.0
+    depends_on:
+      - db
+    expose:
+      - "8069"
+    environment:
+      HOST: db
+      USER: odoo
+      PASSWORD: odoo
+    volumes:
+      - odoo-web:/var/lib/odoo
+      - ./payment_mypay:/mnt/extra-addons/payment_mypay
+      - ./pos_mypay:/mnt/extra-addons/pos_mypay
+    command:
+      [
+        "--addons-path=/mnt/extra-addons,/usr/lib/python3/dist-packages/odoo/addons",
+        "--proxy-mode",
+      ]
+    restart: unless-stopped
+
+  caddy:
+    image: caddy:2
+    depends_on:
+      - odoo
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      DOMAIN: ${DOMAIN:?Set DOMAIN in .env}
+      ACME_EMAIL: ${ACME_EMAIL:?Set ACME_EMAIL in .env}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    restart: unless-stopped
+
+volumes:
+  odoo-db:
+  odoo-web:
+  caddy-data:
+  caddy-config:

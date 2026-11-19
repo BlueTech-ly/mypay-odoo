@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="payment_provider_mypay" model="payment.provider">
+        <field name="name">MyPay</field>
+        <field name="code">mypay</field>
+        <field name="redirect_form_view_id" ref="redirect_form"/>
+        <field name="image_128" type="base64" file="payment_mypay/static/description/icon.png"/>
+        <field name="module_id" ref="base.module_payment_mypay"/>
+        <field name="payment_method_ids" eval="[
+            (6, 0, [
+                ref('payment_method_mypay'),
+                ref('payment_method_moamalat'),
+                ref('payment_method_masrafi_pay'),
+                ref('payment_method_yasr_pay'),
+                ref('payment_method_sahary_pay'),
+                ref('payment_method_edfali'),
+                ref('payment_method_sadad'),
+                ref('payment_method_mobicash'),
+                ref('payment_method_prepaid_card'),
+            ]),
+        ]"/>
+    </record>
+
+</odoo>

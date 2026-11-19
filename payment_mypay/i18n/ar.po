@@ -1,0 +1,390 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* payment_mypay
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-14 00:00+0000\n"
+"PO-Revision-Date: 2026-08-14 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: payment_mypay
+#: model:ir.model.fields,field_description:payment_mypay.field_payment_provider__mypay_client_id
+msgid "Client ID"
+msgstr "معرف العميل"
+
+#. module: payment_mypay
+#: model:ir.model.fields,help:payment_mypay.field_payment_provider__mypay_client_id
+msgid "The Client ID provided in the MyPay merchant dashboard."
+msgstr "معرف العميل من لوحة تحكم تاجر MyPay."
+
+#. module: payment_mypay
+#: model:ir.model.fields,field_description:payment_mypay.field_payment_provider__mypay_secret_id
+msgid "Secret ID"
+msgstr "المفتاح السري"
+
+#. module: payment_mypay
+#: model:ir.model.fields,help:payment_mypay.field_payment_provider__mypay_secret_id
+msgid "The Secret ID provided in the MyPay merchant dashboard."
+msgstr "المفتاح السري من لوحة تحكم تاجر MyPay."
+
+#. module: payment_mypay
+#: model:ir.model.fields,field_description:payment_mypay.field_payment_provider__mypay_webhook_secret
+msgid "Webhook Secret"
+msgstr "سر الويب هوك"
+
+#. module: payment_mypay
+#: model:ir.model.fields,help:payment_mypay.field_payment_provider__mypay_webhook_secret
+msgid ""
+"Optional. Used to verify X-MyPay-Signature on incoming webhooks. "
+"Payment confirmation still works via Payment Status enquiry without "
+"a public HTTPS webhook endpoint."
+msgstr ""
+"اختياري. يُستخدم للتحقق من X-MyPay-Signature على الإشعارات الواردة. "
+"تأكيد الدفع يعمل عبر استعلام Payment Status دون الحاجة إلى "
+"نقطة ويب هوك عامة على HTTPS."
+
+#. module: payment_mypay
+#: model:ir.model.fields,field_description:payment_mypay.field_payment_provider__mypay_webhook_url
+msgid "Webhook URL"
+msgstr "رابط الويب هوك"
+
+#. module: payment_mypay
+#: model:ir.model.fields,help:payment_mypay.field_payment_provider__mypay_webhook_url
+msgid ""
+"Optional. Paste this URL in the MyPay merchant dashboard under API "
+"Credentials → Webhook when a public HTTPS URL is available."
+msgstr ""
+"اختياري. الصق هذا الرابط في لوحة MyPay ضمن بيانات اعتماد API ← Webhook "
+"عند توفر عنوان HTTPS عام."
+
+#. module: payment_mypay
+#: model:ir.model.fields,field_description:payment_mypay.field_payment_provider__mypay_webhook_is_https
+msgid "Webhook URL uses HTTPS"
+msgstr "رابط الويب هوك يستخدم HTTPS"
+
+#. module: payment_mypay
+#: model:ir.model.fields,field_description:payment_mypay.field_payment_provider__mypay_webhook_reachability_warning
+msgid "Webhook Reachability Warning"
+msgstr "تحذير وصول الويب هوك"
+
+#. module: payment_mypay
+#. odoo-python
+#: code:addons/payment_mypay/models/payment_provider.py:0
+msgid ""
+"Inbound MyPay webhooks need a public HTTPS web.base.url. Payments can "
+"still be confirmed via Payment Status enquiry and the return URL. "
+"Optional: use a reverse proxy or tunnel, then update "
+"Settings → System Parameters → web.base.url."
+msgstr ""
+"تحتاج إشعارات MyPay الواردة إلى web.base.url عام على HTTPS. يمكن تأكيد "
+"المدفوعات عبر استعلام Payment Status ورابط العودة. اختياري: استخدم وكيلاً "
+"عكسياً أو نفقاً، ثم حدّث الإعدادات ← معاملات النظام ← web.base.url."
+
+#. module: payment_mypay
+#. odoo-python
+#: code:addons/payment_mypay/models/payment_provider.py:0
+msgid ""
+"MyPay cannot reach localhost for webhooks. Payments can still be "
+"confirmed via Payment Status enquiry. Optional: expose Odoo with a "
+"public HTTPS URL (Cloudflare Tunnel or reverse proxy)."
+msgstr ""
+"لا يستطيع MyPay الوصول إلى localhost للويب هوك. يمكن تأكيد المدفوعات عبر "
+"استعلام Payment Status. اختياري: اجعل أودو متاحاً عبر HTTPS عام "
+"(Cloudflare Tunnel أو وكيل عكسي)."
+
+#. module: payment_mypay
+#. odoo-python
+#: code:addons/payment_mypay/models/payment_provider.py:0
+msgid "A payment token or custom reference is required for status enquiry."
+msgstr "يلزم رمز الدفع أو المرجع المخصص لاستعلام الحالة."
+
+#. module: payment_mypay
+#. odoo-python
+#: code:addons/payment_mypay/models/payment_provider.py:0
+msgid "Payment status not found in the API response."
+msgstr "لم يتم العثور على حالة الدفع في استجابة واجهة برمجة التطبيقات."
+
+#. module: payment_mypay
+#. odoo-python
+#: code:addons/payment_mypay/models/payment_provider.py:0
+msgid ""
+"Multiple payments match this custom reference. "
+"Retry the status enquiry with the payment token "
+"(provider reference)."
+msgstr ""
+"عدة مدفوعات تطابق هذا المرجع المخصص. "
+"أعد استعلام الحالة باستخدام رمز الدفع "
+"(مرجع المزود)."
+
+#. module: payment_mypay
+#. odoo-python
+#: code:addons/payment_mypay/models/payment_provider.py:0
+msgid "Could not establish the connection to the API."
+msgstr "تعذر الاتصال بواجهة برمجة التطبيقات."
+
+#. module: payment_mypay
+#. odoo-python
+#: code:addons/payment_mypay/models/payment_provider.py:0
+msgid "The communication with the API failed: %s"
+msgstr "فشل الاتصال بواجهة برمجة التطبيقات: %s"
+
+#. module: payment_mypay
+#. odoo-python
+#: code:addons/payment_mypay/models/payment_provider.py:0
+msgid "The API returned an invalid response."
+msgstr "أعادت واجهة برمجة التطبيقات استجابة غير صالحة."
+
+#. module: payment_mypay
+#. odoo-python
+#: code:addons/payment_mypay/models/payment_provider.py:0
+msgid "The Client ID and Secret ID are required."
+msgstr "معرف العميل والمفتاح السري مطلوبان."
+
+#. module: payment_mypay
+#. odoo-python
+#: code:addons/payment_mypay/models/payment_provider.py:0
+msgid "Access token not found in the API response."
+msgstr "لم يتم العثور على رمز الوصول في استجابة واجهة برمجة التطبيقات."
+
+#. module: payment_mypay
+#. odoo-python
+#: code:addons/payment_mypay/models/payment_provider.py:0
+msgid "Payment URL or token not found in the API response."
+msgstr "لم يتم العثور على رابط الدفع أو الرمز في استجابة واجهة برمجة التطبيقات."
+
+#. module: payment_mypay
+#. odoo-python
+#: code:addons/payment_mypay/models/payment_transaction.py:0
+msgid "No transaction found matching reference %s."
+msgstr "لم يتم العثور على معاملة تطابق المرجع %s."
+
+#. module: payment_mypay
+#. odoo-python
+#: code:addons/payment_mypay/models/payment_transaction.py:0
+msgid "Paid with MyPay (%s)."
+msgstr "تم الدفع عبر MyPay (%s)."
+
+#. module: payment_mypay
+#. odoo-python
+#: code:addons/payment_mypay/models/payment_transaction.py:0
+msgid "Paid with MyPay (status enquiry)."
+msgstr "تم الدفع عبر MyPay (استعلام الحالة)."
+
+#. module: payment_mypay
+#. odoo-python
+#: code:addons/payment_mypay/models/payment_transaction.py:0
+msgid "Received data with invalid amount."
+msgstr "تم استلام بيانات بمبلغ غير صالح."
+
+#. module: payment_mypay
+#. odoo-python
+#: code:addons/payment_mypay/models/payment_transaction.py:0
+msgid ""
+"The amount of notification %(notification_amount)s does not match the "
+"transaction amount %(tx_amount)s."
+msgstr ""
+"مبلغ الإشعار %(notification_amount)s لا يطابق مبلغ المعاملة %(tx_amount)s."
+
+#. module: payment_mypay
+#. odoo-python
+#: code:addons/payment_mypay/models/payment_transaction.py:0
+msgid ""
+"The currency of notification %(notification_currency)s does not match the "
+"transaction currency %(tx_currency)s."
+msgstr ""
+"عملة الإشعار %(notification_currency)s لا تطابق عملة المعاملة %(tx_currency)s."
+
+#. module: payment_mypay
+#: model:ir.cron,name:payment_mypay.cron_mypay_sync_pending_transactions
+msgid "MyPay: sync pending payment status"
+msgstr "MyPay: مزامنة حالة المدفوعات المعلّقة"
+
+#. module: payment_mypay
+#: model:ir.model,name:payment_mypay.model_payment_provider
+msgid "Payment Provider"
+msgstr "مزود الدفع"
+
+#. module: payment_mypay
+#: model:ir.model,name:payment_mypay.model_payment_transaction
+msgid "Payment Transaction"
+msgstr "معاملة الدفع"
+
+#. module: payment_mypay
+#: model:payment.provider,name:payment_mypay.payment_provider_mypay
+#: model:payment.method,name:payment_mypay.payment_method_mypay
+msgid "MyPay"
+msgstr "ماي باي"
+
+#. module: payment_mypay
+#: model:payment.method,name:payment_mypay.payment_method_moamalat
+msgid "Banking card"
+msgstr "بطاقة مصرفية"
+
+#. module: payment_mypay
+#: model:payment.method,name:payment_mypay.payment_method_masrafi_pay
+msgid "Masrafi Pay"
+msgstr "مصرفي باي"
+
+#. module: payment_mypay
+#: model:payment.method,name:payment_mypay.payment_method_yasr_pay
+msgid "Yasr Pay"
+msgstr "ياسر باي"
+
+#. module: payment_mypay
+#: model:payment.method,name:payment_mypay.payment_method_sahary_pay
+msgid "Sahary Pay"
+msgstr "صحاري باي"
+
+#. module: payment_mypay
+#: model:payment.method,name:payment_mypay.payment_method_edfali
+msgid "Edfali"
+msgstr "إدفالي"
+
+#. module: payment_mypay
+#: model:payment.method,name:payment_mypay.payment_method_sadad
+msgid "SADAD"
+msgstr "سداد"
+
+#. module: payment_mypay
+#: model:payment.method,name:payment_mypay.payment_method_mobicash
+msgid "Mobicash"
+msgstr "موبي كاش"
+
+#. module: payment_mypay
+#: model:payment.method,name:payment_mypay.payment_method_prepaid_card
+msgid "Prepaid card"
+msgstr "بطاقة مسبقة الدفع"
+
+#. module: payment_mypay
+#: model:ir.model.fields,field_description:payment_mypay.field_account_move__mypay_can_pay
+msgid "Can Pay with MyPay"
+msgstr "يمكن الدفع عبر MyPay"
+
+#. module: payment_mypay
+#: model_terms:ir.ui.view,arch_db:payment_mypay.view_move_form_mypay
+#: model_terms:ir.ui.view,arch_db:payment_mypay.mypay_checkout_wizard_view_form
+#: model:ir.actions.act_window,name:payment_mypay.action_mypay_checkout_wizard
+#. odoo-python
+#: code:addons/payment_mypay/models/account_move.py:0
+msgid "Pay via MyPay"
+msgstr "الدفع عبر MyPay"
+
+#. module: payment_mypay
+#: model:ir.model,name:payment_mypay.model_mypay_checkout_wizard
+msgid "Pay invoice via MyPay gateway"
+msgstr "دفع الفاتورة عبر بوابة MyPay"
+
+#. module: payment_mypay
+#: model:ir.model.fields,field_description:payment_mypay.field_mypay_checkout_wizard__payment_method_id
+msgid "Payment Gateway"
+msgstr "بوابة الدفع"
+
+#. module: payment_mypay
+#: model:ir.model.fields,field_description:payment_mypay.field_mypay_checkout_wizard__phone
+msgid "Customer Phone"
+msgstr "هاتف العميل"
+
+#. module: payment_mypay
+#: model:ir.model.fields,help:payment_mypay.field_mypay_checkout_wizard__phone
+msgid ""
+"Libyan mobile number required by MyPay Auto-Submit "
+"(e.g. 0912345678). Without it, MyPay shows all gateways."
+msgstr ""
+"رقم جوال ليبي مطلوب لتفعيل الإرسال التلقائي في MyPay "
+"(مثل 0912345678). بدونه تعرض MyPay كل البوابات."
+
+#. module: payment_mypay
+#: model_terms:ir.ui.view,arch_db:payment_mypay.mypay_checkout_wizard_view_form
+msgid "Open MyPay"
+msgstr "فتح MyPay"
+
+#. module: payment_mypay
+#. odoo-python
+#: code:addons/payment_mypay/wizard/mypay_checkout_wizard.py:0
+msgid ""
+"Enter a valid Libyan mobile number (09xxxxxxxx). MyPay needs it with the"
+" gateway alias to skip the gateway selection page."
+msgstr ""
+"أدخل رقم جوال ليبي صالحاً (09xxxxxxxx). MyPay تحتاجه مع alias البوابة"
+" لتجاوز صفحة اختيار كل البوابات."
+
+#. module: payment_mypay
+#. odoo-python
+#: code:addons/payment_mypay/wizard/mypay_checkout_wizard.py:0
+msgid "Select a MyPay gateway (moamalat, edfali, …)."
+msgstr "اختر بوابة MyPay (moamalat، edfali، …)."
+
+#. module: payment_mypay
+#. odoo-python
+#: code:addons/payment_mypay/models/account_move.py:0
+msgid ""
+"MyPay checkout is only available for posted customer invoices with a residual"
+" amount, when the MyPay provider is enabled or in test mode."
+msgstr ""
+"دفع MyPay متاح فقط لفواتير العملاء المرحّلة ذات الرصيد المتبقي، عندما يكون مزوّد"
+" MyPay مفعّلاً أو في وضع الاختبار."
+
+#. module: payment_mypay
+#. odoo-python
+#: code:addons/payment_mypay/models/account_move.py:0
+msgid ""
+"Online payment is disabled. Enable portal payments in Accounting settings,"
+" then try again."
+msgstr ""
+"الدفع عبر الإنترنت معطّل. فعّل مدفوعات البوابة في إعدادات المحاسبة ثم أعد المحاولة."
+
+#. module: payment_mypay
+#: model:ir.model,name:payment_mypay.model_account_move
+msgid "Journal Entry"
+msgstr "قيد يومية"
+
+#. module: payment_mypay
+#: model:ir.model.fields,field_description:payment_mypay.field_mypay_checkout_wizard__move_id
+msgid "Invoice"
+msgstr "فاتورة"
+
+#. module: payment_mypay
+#: model:ir.model.fields,field_description:payment_mypay.field_mypay_checkout_wizard__amount
+msgid "Amount"
+msgstr "المبلغ"
+
+#. module: payment_mypay
+#: model_terms:ir.ui.view,arch_db:payment_mypay.mypay_checkout_wizard_view_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: payment_mypay
+#: model_terms:ir.ui.view,arch_db:payment_mypay.mypay_checkout_wizard_view_form
+msgid ""
+"Selecting a gateway sends its MyPay alias (e.g. sahary-pay) with a Libyan"
+" phone so checkout skips the all-gateways page."
+msgstr ""
+"اختيار البوابة يرسل alias الخاص بها في MyPay (مثل sahary-pay) مع هاتف ليبي"
+" حتى يتجاوز الدفع صفحة عرض كل البوابات."
+
+#. module: payment_mypay
+#. odoo-python
+#: code:addons/payment_mypay/wizard/mypay_checkout_wizard.py:0
+msgid "Amount must be positive and not greater than the invoice residual."
+msgstr "يجب أن يكون المبلغ موجباً وألا يتجاوز الرصيد المتبقي للفاتورة."
+
+#. module: payment_mypay
+#. odoo-python
+#: code:addons/payment_mypay/wizard/mypay_checkout_wizard.py:0
+msgid "No MyPay provider is enabled for this company."
+msgstr "لا يوجد مزوّد MyPay مفعّل لهذه الشركة."
+
+#. module: payment_mypay
+#. odoo-python
+#: code:addons/payment_mypay/wizard/mypay_checkout_wizard.py:0
+msgid "MyPay did not return a payment URL."
+msgstr "لم تُرجع MyPay رابط دفع."
