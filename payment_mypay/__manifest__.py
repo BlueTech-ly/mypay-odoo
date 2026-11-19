@@ -2,13 +2,16 @@
 
 {
     'name': "MyPay",
-    'version': '18.0.1.4.2',
+    'version': '18.0.1.4.3',
     'category': 'Accounting/Payment Providers',
     'sequence': 350,
     'summary': "Accept payments through MyPay hosted checkout.",
     'description': " ",  # Non-empty string to avoid loading the README file.
     'author': "MyPay",
     'website': "https://mypay.ly",
+    'images': [
+        'static/description/banner.png',
+    ],
     'depends': ['payment', 'account_payment'],
     'data': [
         'security/ir.model.access.csv',
