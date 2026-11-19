@@ -2,7 +2,7 @@
 
 {
     'name': "POS MyPay",
-    'version': '18.0.1.4.1',
+    'version': '18.0.1.4.2',
     'category': 'Sales/Point of Sale',
     'summary': "Pay POS orders with MyPay via QR / hosted checkout.",
     'description': " ",

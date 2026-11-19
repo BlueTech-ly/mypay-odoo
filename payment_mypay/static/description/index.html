@@ -3,41 +3,208 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>MyPay</title>
+    <title>MyPay for Odoo 18</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <style>
-        body { font-family: Helvetica, Arial, sans-serif; color: #1f2937; line-height: 1.5; margin: 0; padding: 24px; }
-        h1 { font-size: 1.75rem; margin: 0 0 8px; }
-        h2 { font-size: 1.15rem; margin: 24px 0 8px; }
-        p, li { font-size: 0.95rem; }
-        .muted { color: #6b7280; }
-        ul { padding-left: 1.2rem; }
-        code { background: #f3f4f6; padding: 1px 6px; border-radius: 4px; }
-        .box { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px; margin-top: 16px; }
+        :root {
+            --mypay-navy: #0b2c4d;
+            --mypay-blue: #1a6bb5;
+            --mypay-muted: #5b6b7c;
+        }
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            color: #1f2a37;
+            line-height: 1.55;
+        }
+        .oe_container { max-width: 920px; margin: 0 auto; padding: 28px 20px 40px; }
+        .hero h1 {
+            color: var(--mypay-navy);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .hero .lead {
+            color: var(--mypay-muted);
+            font-size: 1.05rem;
+            margin-bottom: 0;
+        }
+        h2 {
+            color: var(--mypay-navy);
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 28px 0 12px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #e8eef5;
+        }
+        h3 {
+            color: var(--mypay-blue);
+            font-size: 1.05rem;
+            font-weight: 650;
+            margin: 18px 0 8px;
+        }
+        .section-ar { direction: rtl; text-align: right; }
+        .card-lite {
+            background: #f7fafc;
+            border: 1px solid #e5edf5;
+            border-radius: 10px;
+            padding: 16px 18px;
+            margin: 12px 0;
+        }
+        ul { margin-bottom: 0.4rem; }
+        li { margin: 4px 0; }
+        code, .path {
+            background: #eef3f8;
+            border-radius: 4px;
+            padding: 1px 6px;
+            font-size: 0.92em;
+        }
+        table.gateways {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 8px 0 4px;
+            font-size: 0.95rem;
+        }
+        table.gateways th, table.gateways td {
+            border: 1px solid #dbe5ef;
+            padding: 8px 10px;
+            text-align: left;
+        }
+        .section-ar table.gateways th,
+        .section-ar table.gateways td { text-align: right; }
+        table.gateways th { background: #eef4fa; color: var(--mypay-navy); }
+        .muted { color: var(--mypay-muted); }
+        .footer-note {
+            margin-top: 28px;
+            padding-top: 14px;
+            border-top: 1px solid #e5edf5;
+            color: var(--mypay-muted);
+            font-size: 0.92rem;
+        }
+        a { color: var(--mypay-blue); }
     </style>
 </head>
 <body>
-    <h1>MyPay</h1>
-    <p class="muted">Accept Libyan payments in Odoo 18 through MyPay hosted checkout.</p>
+<div class="oe_container">
 
-    <h2>Features</h2>
-    <ul>
-        <li>Hosted redirect checkout (LYD)</li>
-        <li>Gateway aliases: Moamalat, Masrafi Pay, Yasr Pay, Sahary Pay, Edfali, SADAD, Mobicash</li>
-        <li>Staff pay-on-behalf from customer invoices</li>
-        <li>Payment Status enquiry + optional signed webhooks + cron recovery</li>
-    </ul>
-
-    <h2>الميزات</h2>
-    <ul>
-        <li>دفع مستضاف عبر MyPay (دينار ليبي)</li>
-        <li>بوابات محلية عبر gateway aliases</li>
-        <li>دفع الموظف نيابة عن العميل من الفاتورة</li>
-        <li>تأكيد عبر Payment Status وWebhook اختياري ومهمة مجدولة</li>
-    </ul>
-
-    <div class="box">
-        <p><strong>Setup:</strong> Install <code>MyPay</code>, open Payment Providers → MyPay, enter Client ID / Secret ID, set Test or Enabled.</p>
-        <p><strong>Docs:</strong> <a href="https://mypay.ly">https://mypay.ly</a></p>
+    <div class="hero">
+        <h1>MyPay</h1>
+        <p class="lead">
+            Accept Libyan Dinar (LYD) payments in Odoo 18 through
+            <a href="https://mypay.ly" target="_blank" rel="noopener">MyPay</a> hosted checkout —
+            with local bank and wallet gateways, staff-assisted payment, and reliable confirmation.
+        </p>
     </div>
+
+    <!-- ENGLISH -->
+    <h2>Features</h2>
+    <div class="card-lite">
+        <ul>
+            <li><strong>Hosted checkout</strong> — redirect customers to MyPay’s secure payment page.</li>
+            <li><strong>Local gateways</strong> — pre-select a gateway via MyPay aliases (no need to pick again on MyPay when Auto-Submit is used).</li>
+            <li><strong>Staff pay on behalf</strong> — from a posted customer invoice, open <em>Pay via MyPay</em>, choose a gateway, enter a Libyan mobile, and complete payment with the customer present.</li>
+            <li><strong>Reliable confirmation</strong> — Payment Status enquiry on return, optional signed webhooks, and a scheduled job for closed browsers / late success.</li>
+            <li><strong>Point of Sale</strong> — companion module <code>pos_mypay</code> for online POS payment (QR / hosted link).</li>
+        </ul>
+    </div>
+
+    <h2>Supported gateways</h2>
+    <table class="gateways">
+        <thead>
+            <tr><th>Alias</th><th>Method</th></tr>
+        </thead>
+        <tbody>
+            <tr><td><code>moamalat</code></td><td>Banking card</td></tr>
+            <tr><td><code>masrafi-pay</code></td><td>Masrafi Pay</td></tr>
+            <tr><td><code>yasr-pay</code></td><td>Yasr Pay</td></tr>
+            <tr><td><code>sahary-pay</code></td><td>Sahary Pay</td></tr>
+            <tr><td><code>edfali</code></td><td>Edfali</td></tr>
+            <tr><td><code>sadad</code></td><td>SADAD</td></tr>
+            <tr><td><code>mobicash</code></td><td>Mobicash</td></tr>
+            <tr><td><code>prepaid-card</code></td><td>Prepaid card (optional; must be enabled on your MyPay account)</td></tr>
+        </tbody>
+    </table>
+    <p class="muted">Generic <strong>MyPay</strong> leaves gateway selection on the MyPay page. Selecting a gateway method sends <code>payment_gateway</code> with the matching alias.</p>
+
+    <h2>How payment is confirmed</h2>
+    <ul>
+        <li><strong>Payment Status</strong> — Odoo calls MyPay after return/cancel (no public HTTPS required).</li>
+        <li><strong>Cron</strong> — re-checks pending (and recently canceled) transactions if the shopper closed the browser.</li>
+        <li><strong>Webhook</strong> — optional faster confirmation when a public HTTPS URL is available.</li>
+    </ul>
+
+    <h2>Setup</h2>
+    <ol>
+        <li>Install <strong>MyPay</strong> from Apps.</li>
+        <li>Open <strong>Invoicing / Accounting → Configuration → Payment Providers → MyPay</strong>.</li>
+        <li>Enter <strong>Client ID</strong> and <strong>Secret ID</strong> from the MyPay merchant dashboard.</li>
+        <li>Set the provider to <strong>Test</strong> (sandbox) or <strong>Enabled</strong> (production).</li>
+        <li>(Optional) Configure webhook secret + public HTTPS URL for inbound webhooks.</li>
+        <li>For staff-assisted payments: open a posted customer invoice → <strong>Pay via MyPay</strong> → choose gateway + Libyan phone (<code>09xxxxxxxx</code>).</li>
+    </ol>
+
+    <h2>Requirements &amp; limits</h2>
+    <ul>
+        <li>Odoo <strong>18.0</strong></li>
+        <li>Currency: <strong>LYD</strong> only</li>
+        <li>No refund API — handle refunds manually in Odoo and the MyPay dashboard</li>
+        <li>No card tokenization / saved payment methods</li>
+    </ul>
+
+    <!-- ARABIC -->
+    <div class="section-ar">
+        <h2>الميزات</h2>
+        <div class="card-lite">
+            <ul>
+                <li><strong>دفع مستضاف</strong> — توجيه العميل إلى صفحة MyPay الآمنة.</li>
+                <li><strong>بوابات محلية</strong> — اختيار بوابة مسبقاً عبر gateway aliases (مع الهاتف الليبي يمكن تجاوز صفحة كل البوابات).</li>
+                <li><strong>دفع الموظف نيابة عن العميل</strong> — من فاتورة مرحّلة: <em>الدفع عبر MyPay</em> → اختيار البوابة + رقم جوال ليبي → إتمام الدفع مع حضور العميل.</li>
+                <li><strong>تأكيد موثوق</strong> — استعلام Payment Status، وWebhook اختياري، ومهمة مجدولة عند إغلاق المتصفح.</li>
+                <li><strong>نقطة البيع</strong> — وحدة مرافقة <code>pos_mypay</code> للدفع أونلاين من الـ POS.</li>
+            </ul>
+        </div>
+
+        <h2>البوابات المدعومة</h2>
+        <table class="gateways">
+            <thead>
+                <tr><th>Alias</th><th>الوسيلة</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><code>moamalat</code></td><td>بطاقة مصرفية</td></tr>
+                <tr><td><code>masrafi-pay</code></td><td>مصرفي باي</td></tr>
+                <tr><td><code>yasr-pay</code></td><td>ياسر باي</td></tr>
+                <tr><td><code>sahary-pay</code></td><td>صحاري باي</td></tr>
+                <tr><td><code>edfali</code></td><td>إدفالي</td></tr>
+                <tr><td><code>sadad</code></td><td>سداد</td></tr>
+                <tr><td><code>mobicash</code></td><td>موبي كاش</td></tr>
+                <tr><td><code>prepaid-card</code></td><td>بطاقة مسبقة الدفع (اختيارية؛ تتطلب تفعيل الحساب)</td></tr>
+            </tbody>
+        </table>
+
+        <h2>التثبيت</h2>
+        <ol>
+            <li>ثبّت <strong>MyPay</strong> من التطبيقات.</li>
+            <li>افتح <strong>الفوترة / المحاسبة ← الإعدادات ← مزودو الدفع ← MyPay</strong>.</li>
+            <li>أدخل <strong>معرف العميل</strong> و<strong>المفتاح السري</strong>.</li>
+            <li>اضبط الحالة على <strong>اختبار</strong> أو <strong>مفعّل</strong>.</li>
+            <li>(اختياري) اضبط الويب هوك عند توفر HTTPS عام.</li>
+            <li>لدفع الموظف: فاتورة مرحّلة → <strong>الدفع عبر MyPay</strong> → بوابة + هاتف <code>09xxxxxxxx</code>.</li>
+        </ol>
+
+        <h2>المتطلبات والحدود</h2>
+        <ul>
+            <li>أودو <strong>18.0</strong></li>
+            <li>العملة: <strong>LYD</strong> فقط</li>
+            <li>لا يوجد API للاسترداد — عالجه يدوياً في أودو ولوحة MyPay</li>
+            <li>لا يوجد حفظ بطاقات / tokenization</li>
+        </ul>
+    </div>
+
+    <div class="footer-note">
+        Documentation &amp; merchant dashboard:
+        <a href="https://mypay.ly" target="_blank" rel="noopener">https://mypay.ly</a>
+        · Author: MyPay · License: LGPL-3
+    </div>
+
+</div>
 </body>
 </html>
