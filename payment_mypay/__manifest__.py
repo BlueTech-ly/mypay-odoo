@@ -2,7 +2,7 @@
 
 {
     'name': "MyPay",
-    'version': '18.0.1.4.3',
+    'version': '18.0.1.4.4',
     'category': 'Accounting/Payment Providers',
     'sequence': 350,
     'summary': "Accept payments through MyPay hosted checkout.",
